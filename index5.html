@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eSportsWeb - Tournament Management</title>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-..."
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1a1a1a;
+      color: white;
+    }
+
+    .nav-bar {
+      background-color: #5c00cc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffcc;
+      text-align: center;
+      flex: 1;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00ffcc;
+    }
+
+    .login-btn {
+      background-color: #00ffcc;
+      color: rgb(52, 146, 138);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #00ccb2;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .left-links,
+    .right-links {
+      display: flex;
+      gap: 30px;
+    }
+    .hero {
+      background: linear-gradient(to right, #58449f, #3b34bb);
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 80px 0;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .hero .btn {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #00ffcc;
+      color: rgb(61, 131, 117);
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    
+    .hero .btn:hover {
+      background-color: #00ccb2;
+    }
+   
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #5d4216;
+      color: white;
+    }
+    
+    .features {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #461da7;
+    }
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #cc9132;
+    }
+  
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .feature {
+      background-color: #2c2c2c;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  } 
+  .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    .feature i {
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: #2b00ff;
+    } 
+    .feature h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .feature p {
+      font-size: 16px;
+      color: #cccccc;
+      line-height: 1.6;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #b36415;
+      color: white;
+      line-height: 1.6;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 36px;
+      color: #00ffcc;
+      margin-bottom: 20px;
+      text-align: center;
+    } 
+    section p {
+      font-size: 18px;
+      color: #7f4f25;
+      text-align: center;
+      margin-bottom: 30px;
+    } 
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    section ul li {
+      background-color: #2c6bab;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+    }
+    section ul li:hover {
+      transform: translateY(-3px);
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #00ccb2;
+    }
+    .points-table {
+      background-color: #1f1f1f;
+      border-top: 2px solid #333;
+      margin-top: 60px;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } 
+      body {
+        background: #f4f6f8;
+        color: #333;
+        padding: 40px 20px;
+        
+      }
+      h2 {
+        margin-bottom: 10px;
+        color: #222;
+      }
+      p {
+        margin-bottom: 20px;
+      }
+section {
+  max-width: 600px;
+ margin: 40px auto;
+ background: white;
+ padding: 30px 25px;
+ border-radius: 15px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+} 
+form {
+  display: flex;
+  flex-direction: column;
+}
+input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+input[type="file"] {
+  padding: 8px;
+}
+.btn {
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: center;
+}
+.btn:hover {
+  background: #0056b3;
+}
+.contact a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  section {
+  margin: 20px 10px;
+    padding: 20px;
+  }
+  .btn {
+    font-size: 15px;
+    padding: 10px;
+  } 
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+}
+footer {
+  background-color: #111827;
+  color: #f3f4f6;
+  padding: 50px 20px 30px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer-section {
+  flex: 1 1 200px;
+  margin: 20px;
+}
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  border-bottom: 2px solid #2563eb;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-section ul li {
+  margin: 12px 0;
+}
+.footer-section ul li a {
+  text-decoration: none;
+  color: #cbd5e1;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+.footer-section ul li a:hover {
+  color: #3b82f6;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+@media (max-width: 768px) {
+  .footer-content {
+   flex-direction: column;
+   align-items: center;
+}
+.footer-section {
+  margin: 20px 0;
+}
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+  }
+  footer {
+      background-color: #111827;
+      color: #f3f4f6;
+      padding: 50px 20px 30px;
+    }
+  .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    } 
+  .footer-section {
+      flex: 1 1 220px;
+      margin: 20px;
+  }
+  .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #ffffff;
+      border-bottom: 2px solid #2563eb;
+      display: inline-block;
+      padding-bottom: 5px;
+  } 
+  .footer-section ul {
+      list-style: none;
+      padding: 0;
+  }
+  footer-section ul li {
+      margin: 12px 0;
+  } 
+  .footer-section ul li a {
+        text-decoration: none;
+        color: #cbd5e1;
+        font-size: 15px;
+        transition: color 0.3s;
+  } 
+  .footer-section ul li a:hover {
+    color: #3b82f6;
+  }
+  .payment-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 10px;
+  } 
+  .payment-icons img {
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+  } 
+  .payment-icons img:hover {
+    transform: scale(1.1);
+} 
+.footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1px solid #374151;
+      padding-top: 20px;
+      font-size: 14px;
+      color: #94a3b8;
+  } 
+  @media (max-width: 768px) {
+    .footer-content {
+     flex-direction: column;
+     align-items: center;
+  }
+  .footer-section {
+      margin: 20px 0;
+  }
+  .payment-icons {
+        justify-content: center;
+  }  
+</style>
+</head>
+<body>
+
+  <div class="nav-bar">
+    <div class="left-links">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Find Tournaments</a></li>
+      </ul> 
+    </div>
+
+    <div class="logo">eSportsWeb</div>
+
+    <div class="right-links">
+      <ul class="nav-links">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#" class="login-btn">Login</a></li>
+      </ul>
+    </div>
+  </div>
+  <section class="hero">
+    <h1>managing esports tournament made easy</h1>
+    <p>esportsweb.in is a powerful platform built for esports lovers to create,manage, and dominate tornaments effortlessely.</p>
+    <a href="#" class="btn">go to dashboard</a>
+</section>
+<section class="features">
+  <h2>Why Choose eSportsWeb?</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <i class="fas fa-trophy"></i>
+      <h3>Easy Tournament Management</h3>
+      <p>Manage tournaments, teams, and matches effortlessly with our intuitive dashboard.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-users"></i>
+      <h3>Player & Team Registration</h3>
+      <p>Simplify signups and team formations with our user-friendly registration system.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-chart-line"></i>
+      <h3>Live Leaderboards</h3>
+      <p>Track rankings, scores, and progress in real-time across all matches.</p>
+    </div>
+  </div>
+</section>
+<section class="create-tournament">
+  <h2>Create Tournament Form</h2>
+  <p>Quickly create and manage tournaments in a single form.</p>
+  <ul>
+    <li>Manage multiple teams and matches.</li>
+    <li>Customizable points system.</li>
+    <li>Add or disqualify teams with a single click.</li>
+  </ul>
+  <div style="text-align: center;">
+    <a href="#" class="btn">Create Tournament</a>
+  </div>
+</section>
+<section class="points-table">
+  <h2>Demo Points Table</h2>
+  <p>Automatically generated and updated points table for your tournament.</p>
+  <ul>
+    <li>Updated in real-time with match results.</li>
+    <li>Dedicated webpage for each points table.</li>
+    <li>Export to image feature available.</li>
+  </ul>
+</section>
+<section class="registration-form">
+  <h2>Demo Registration Form</h2>
+  <p>Submit your team details and player info to join the tournament.</p>
+  <form>
+      <input type="text" placeholder="Team Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Discord ID" required>
+      <input type="file" required>
+      <button type="submit" class="btn">Register Team</button>
+  </form>
+</section>
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:contact@esportsweb.in">contact@esportsweb.in</a></p>
+  <p>Stay updated with our latest tournaments and news.</p>
+  <a href="#" class="btn">Follow on Instagram</a>
+</section>
+<footer>
+  <div class="footer-content">
+      <div class="footer-section">
+          <h3>Information</h3>
+          <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Plans & Pricing</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Refund & Cancellation</a></li>
+          </ul>
+</div>
+  <div class="footer-section">
+     <h3>Support</h3>
+      <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Report a Problem</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Facebook</a></li>
+      </ul>
+  </div>
+</div>
+<div class="footer-bottom">
+  &copy; 2025 EsportsWeb. All rights reserved.
+</div>
+</footer>
+<footer>
+        <div class="footer-content">
+
+            <div class="footer-section">
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Plans & Pricing</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Refund & Cancellation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Report a Problem</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+</div> 
+<div class="footer-section">
+                <h3>Payments Powered By</h3>
+                <div class="payment-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Razorpay_logo.svg" alt="Razorpay Logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal Logo">
+                </div>
+            </div>
+
+</div>
+<div class="footer-bottom">
+            &copy; 2025 <strong>eSportsWeb.in</strong> | All rights reserved.
+        </div>
+    </footer>
+                    
+<script src="script4.js"></script>
+</body>
+</html>
